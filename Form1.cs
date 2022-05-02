@@ -20,6 +20,7 @@ namespace PING {
 
     private async Task GetPing() {
       this.Executando = true;
+      lbl_rec_executando.Text = "SIM";
 
       if(string.IsNullOrEmpty(tb_server.Text)) {
         XScreen.ShowMessageBox("INFO", "SERVER INVALIDO");
@@ -52,7 +53,6 @@ namespace PING {
           lbl_rec_timeout.Text = timeout.ToString();
 
           showLine.Add($"[ IP: {tb_server.Text} | STATUS: {result.Status} | MS: {result.Ms} ]");
-          Thread.Sleep(500);
 
           // Controls the preview pane
           if(count % 5 == 0) {
@@ -72,12 +72,17 @@ namespace PING {
 
           i++;
           count++;
+          Thread.Sleep(500);
         }
+        
+
 
 
       } catch(Exception ex) {
         XScreen.ShowMessageBox("ERROR", ex.Message);
       }
+
+      lbl_rec_executando.Text = "NÃO";
 
 
     }

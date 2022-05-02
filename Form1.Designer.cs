@@ -41,6 +41,8 @@
       this.Btn_Go = new System.Windows.Forms.Button();
       this.lbl_server = new System.Windows.Forms.Label();
       this.tb_server = new System.Windows.Forms.TextBox();
+      this.label4 = new System.Windows.Forms.Label();
+      this.lbl_rec_executando = new System.Windows.Forms.Label();
       this.panel1.SuspendLayout();
       this.panel2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.nmc_timeout)).BeginInit();
@@ -87,6 +89,8 @@
       // panel2
       // 
       this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+      this.panel2.Controls.Add(this.lbl_rec_executando);
+      this.panel2.Controls.Add(this.label4);
       this.panel2.Controls.Add(this.lbl_rec_timeout);
       this.panel2.Controls.Add(this.label2);
       this.panel2.Controls.Add(this.lbl_rec_mediaMs);
@@ -95,16 +99,16 @@
       this.panel2.Controls.Add(this.lbl_qtd_request);
       this.panel2.Controls.Add(this.lbl_media);
       this.panel2.Controls.Add(this.lbl_ms);
-      this.panel2.Location = new System.Drawing.Point(9, 72);
+      this.panel2.Location = new System.Drawing.Point(9, 71);
       this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(189, 83);
+      this.panel2.Size = new System.Drawing.Size(189, 87);
       this.panel2.TabIndex = 10;
       // 
       // lbl_rec_timeout
       // 
       this.lbl_rec_timeout.AutoSize = true;
       this.lbl_rec_timeout.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-      this.lbl_rec_timeout.Location = new System.Drawing.Point(93, 61);
+      this.lbl_rec_timeout.Location = new System.Drawing.Point(93, 49);
       this.lbl_rec_timeout.Name = "lbl_rec_timeout";
       this.lbl_rec_timeout.Size = new System.Drawing.Size(14, 15);
       this.lbl_rec_timeout.TabIndex = 12;
@@ -113,7 +117,7 @@
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(14, 61);
+      this.label2.Location = new System.Drawing.Point(14, 49);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(54, 15);
       this.label2.TabIndex = 11;
@@ -123,7 +127,7 @@
       // 
       this.lbl_rec_mediaMs.AutoSize = true;
       this.lbl_rec_mediaMs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-      this.lbl_rec_mediaMs.Location = new System.Drawing.Point(93, 45);
+      this.lbl_rec_mediaMs.Location = new System.Drawing.Point(93, 34);
       this.lbl_rec_mediaMs.Name = "lbl_rec_mediaMs";
       this.lbl_rec_mediaMs.Size = new System.Drawing.Size(14, 15);
       this.lbl_rec_mediaMs.TabIndex = 10;
@@ -133,7 +137,7 @@
       // 
       this.lbl_rec_pings.AutoSize = true;
       this.lbl_rec_pings.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-      this.lbl_rec_pings.Location = new System.Drawing.Point(93, 30);
+      this.lbl_rec_pings.Location = new System.Drawing.Point(93, 19);
       this.lbl_rec_pings.Name = "lbl_rec_pings";
       this.lbl_rec_pings.Size = new System.Drawing.Size(14, 15);
       this.lbl_rec_pings.TabIndex = 9;
@@ -143,7 +147,7 @@
       // 
       this.lbl_rec_ms.AutoSize = true;
       this.lbl_rec_ms.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-      this.lbl_rec_ms.Location = new System.Drawing.Point(93, 12);
+      this.lbl_rec_ms.Location = new System.Drawing.Point(93, 4);
       this.lbl_rec_ms.Name = "lbl_rec_ms";
       this.lbl_rec_ms.Size = new System.Drawing.Size(14, 15);
       this.lbl_rec_ms.TabIndex = 8;
@@ -152,7 +156,7 @@
       // lbl_qtd_request
       // 
       this.lbl_qtd_request.AutoSize = true;
-      this.lbl_qtd_request.Location = new System.Drawing.Point(14, 30);
+      this.lbl_qtd_request.Location = new System.Drawing.Point(14, 19);
       this.lbl_qtd_request.Name = "lbl_qtd_request";
       this.lbl_qtd_request.Size = new System.Drawing.Size(39, 15);
       this.lbl_qtd_request.TabIndex = 6;
@@ -161,7 +165,7 @@
       // lbl_media
       // 
       this.lbl_media.AutoSize = true;
-      this.lbl_media.Location = new System.Drawing.Point(14, 45);
+      this.lbl_media.Location = new System.Drawing.Point(14, 34);
       this.lbl_media.Name = "lbl_media";
       this.lbl_media.Size = new System.Drawing.Size(63, 15);
       this.lbl_media.TabIndex = 5;
@@ -170,7 +174,7 @@
       // lbl_ms
       // 
       this.lbl_ms.AutoSize = true;
-      this.lbl_ms.Location = new System.Drawing.Point(14, 12);
+      this.lbl_ms.Location = new System.Drawing.Point(14, 4);
       this.lbl_ms.Name = "lbl_ms";
       this.lbl_ms.Size = new System.Drawing.Size(27, 15);
       this.lbl_ms.TabIndex = 7;
@@ -248,6 +252,25 @@
       this.tb_server.Size = new System.Drawing.Size(153, 23);
       this.tb_server.TabIndex = 0;
       // 
+      // label4
+      // 
+      this.label4.AutoSize = true;
+      this.label4.Location = new System.Drawing.Point(15, 64);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(72, 15);
+      this.label4.TabIndex = 13;
+      this.label4.Text = "Executando:";
+      // 
+      // lbl_rec_executando
+      // 
+      this.lbl_rec_executando.AutoSize = true;
+      this.lbl_rec_executando.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+      this.lbl_rec_executando.Location = new System.Drawing.Point(93, 64);
+      this.lbl_rec_executando.Name = "lbl_rec_executando";
+      this.lbl_rec_executando.Size = new System.Drawing.Size(33, 15);
+      this.lbl_rec_executando.TabIndex = 14;
+      this.lbl_rec_executando.Text = "NÃO";
+      // 
       // F_Ping
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -287,5 +310,7 @@
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.Button Btn_Parar;
+    private System.Windows.Forms.Label lbl_rec_executando;
+    private System.Windows.Forms.Label label4;
   }
 }
