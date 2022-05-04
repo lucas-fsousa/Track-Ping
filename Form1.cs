@@ -24,6 +24,7 @@ namespace PING {
 
       if(string.IsNullOrEmpty(tb_server.Text)) {
         XScreen.ShowMessageBox("INFO", "SERVER INVALIDO");
+        return;
       }
 
       try {
@@ -41,7 +42,7 @@ namespace PING {
           var result = await X.GetPing(server, timeoutValue);
 
           if(result.Timeout) {
-            lstMs.Add(0);
+            lstMs.Add(timeoutValue);
             timeout++;
 
           } else {
@@ -84,8 +85,6 @@ namespace PING {
       }
 
       lbl_rec_executando.Text = "NÃO";
-
-
     }
 
     private void Btn_Go_Click(object sender, EventArgs e) {
