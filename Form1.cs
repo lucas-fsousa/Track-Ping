@@ -19,13 +19,13 @@ namespace PING {
     private bool Executando { get; set; }
 
     private async Task GetPing() {
-      this.Executando = true;
-      lbl_rec_executando.Text = "SIM";
-
       if(string.IsNullOrEmpty(tb_server.Text)) {
         XScreen.ShowMessageBox("INFO", "SERVER INVALIDO");
         return;
       }
+
+      this.Executando = true;
+      lbl_rec_executando.Text = "SIM";
 
       try {
         List<long> lstMs = new List<long>();
