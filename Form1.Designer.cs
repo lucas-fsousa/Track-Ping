@@ -27,6 +27,8 @@
       this.Btn_Parar = new System.Windows.Forms.Button();
       this.label3 = new System.Windows.Forms.Label();
       this.panel2 = new System.Windows.Forms.Panel();
+      this.lbl_rec_executando = new System.Windows.Forms.Label();
+      this.label4 = new System.Windows.Forms.Label();
       this.lbl_rec_timeout = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.lbl_rec_mediaMs = new System.Windows.Forms.Label();
@@ -41,21 +43,21 @@
       this.Btn_Go = new System.Windows.Forms.Button();
       this.lbl_server = new System.Windows.Forms.Label();
       this.tb_server = new System.Windows.Forms.TextBox();
-      this.label4 = new System.Windows.Forms.Label();
-      this.lbl_rec_executando = new System.Windows.Forms.Label();
+      this.panel3 = new System.Windows.Forms.Panel();
       this.panel1.SuspendLayout();
       this.panel2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.nmc_timeout)).BeginInit();
+      this.panel3.SuspendLayout();
       this.SuspendLayout();
       // 
       // panel1
       // 
+      this.panel1.Controls.Add(this.panel3);
       this.panel1.Controls.Add(this.Btn_Parar);
       this.panel1.Controls.Add(this.label3);
       this.panel1.Controls.Add(this.panel2);
       this.panel1.Controls.Add(this.nmc_timeout);
       this.panel1.Controls.Add(this.label1);
-      this.panel1.Controls.Add(this.tb_result);
       this.panel1.Controls.Add(this.Btn_Go);
       this.panel1.Controls.Add(this.lbl_server);
       this.panel1.Controls.Add(this.tb_server);
@@ -103,6 +105,25 @@
       this.panel2.Name = "panel2";
       this.panel2.Size = new System.Drawing.Size(189, 87);
       this.panel2.TabIndex = 10;
+      // 
+      // lbl_rec_executando
+      // 
+      this.lbl_rec_executando.AutoSize = true;
+      this.lbl_rec_executando.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+      this.lbl_rec_executando.Location = new System.Drawing.Point(93, 64);
+      this.lbl_rec_executando.Name = "lbl_rec_executando";
+      this.lbl_rec_executando.Size = new System.Drawing.Size(33, 15);
+      this.lbl_rec_executando.TabIndex = 14;
+      this.lbl_rec_executando.Text = "NÃO";
+      // 
+      // label4
+      // 
+      this.label4.AutoSize = true;
+      this.label4.Location = new System.Drawing.Point(15, 64);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(72, 15);
+      this.label4.TabIndex = 13;
+      this.label4.Text = "Executando:";
       // 
       // lbl_rec_timeout
       // 
@@ -215,13 +236,14 @@
       // tb_result
       // 
       this.tb_result.BackColor = System.Drawing.SystemColors.Desktop;
+      this.tb_result.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tb_result.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
       this.tb_result.ForeColor = System.Drawing.SystemColors.Window;
-      this.tb_result.Location = new System.Drawing.Point(204, 9);
+      this.tb_result.Location = new System.Drawing.Point(0, 0);
       this.tb_result.Multiline = true;
       this.tb_result.Name = "tb_result";
       this.tb_result.ReadOnly = true;
-      this.tb_result.Size = new System.Drawing.Size(314, 180);
+      this.tb_result.Size = new System.Drawing.Size(305, 177);
       this.tb_result.TabIndex = 3;
       // 
       // Btn_Go
@@ -252,24 +274,14 @@
       this.tb_server.Size = new System.Drawing.Size(153, 23);
       this.tb_server.TabIndex = 0;
       // 
-      // label4
+      // panel3
       // 
-      this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(15, 64);
-      this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(72, 15);
-      this.label4.TabIndex = 13;
-      this.label4.Text = "Executando:";
-      // 
-      // lbl_rec_executando
-      // 
-      this.lbl_rec_executando.AutoSize = true;
-      this.lbl_rec_executando.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-      this.lbl_rec_executando.Location = new System.Drawing.Point(93, 64);
-      this.lbl_rec_executando.Name = "lbl_rec_executando";
-      this.lbl_rec_executando.Size = new System.Drawing.Size(33, 15);
-      this.lbl_rec_executando.TabIndex = 14;
-      this.lbl_rec_executando.Text = "NÃO";
+      this.panel3.AutoSize = true;
+      this.panel3.Controls.Add(this.tb_result);
+      this.panel3.Location = new System.Drawing.Point(204, 9);
+      this.panel3.Name = "panel3";
+      this.panel3.Size = new System.Drawing.Size(305, 177);
+      this.panel3.TabIndex = 13;
       // 
       // F_Ping
       // 
@@ -277,6 +289,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(521, 192);
       this.Controls.Add(this.panel1);
+      this.Cursor = System.Windows.Forms.Cursors.Hand;
       this.MaximizeBox = false;
       this.Name = "F_Ping";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -286,6 +299,8 @@
       this.panel2.ResumeLayout(false);
       this.panel2.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.nmc_timeout)).EndInit();
+      this.panel3.ResumeLayout(false);
+      this.panel3.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -312,5 +327,6 @@
     private System.Windows.Forms.Button Btn_Parar;
     private System.Windows.Forms.Label lbl_rec_executando;
     private System.Windows.Forms.Label label4;
+    private System.Windows.Forms.Panel panel3;
   }
 }

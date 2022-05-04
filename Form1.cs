@@ -30,12 +30,15 @@ namespace PING {
         List<long> lstMs = new List<long>();
         List<string> showLine = new List<string>();
         int timeout = 0;
-        int i = 1, count = 0;
+        int i = 1, count = 1;
         tb_result.Text = string.Empty;
+        string server = tb_server.Text.RemoveWhiteSpaces();
+        int timeoutValue = Convert.ToInt32(nmc_timeout.Value);
 
         while(Executando) {
+          GC.Collect();
 
-          var result = await X.GetPing(tb_server.Text.RemoveWhiteSpaces(), Convert.ToInt32(nmc_timeout.Value));
+          var result = await X.GetPing(server, timeoutValue);
 
           if(result.Timeout) {
             lstMs.Add(0);
@@ -52,7 +55,7 @@ namespace PING {
           lbl_rec_pings.Text = i.ToString();
           lbl_rec_timeout.Text = timeout.ToString();
 
-          showLine.Add($"[ IP: {tb_server.Text} | STATUS: {result.Status} | MS: {result.Ms} ]");
+          showLine.Add($"[ IP: {server} | STATUS: {result.Status} | MS: {result.Ms} ]");
 
           // Controls the preview pane
           if(count % 5 == 0) {
@@ -75,11 +78,9 @@ namespace PING {
           Thread.Sleep(500);
         }
         
-
-
-
       } catch(Exception ex) {
         XScreen.ShowMessageBox("ERROR", ex.Message);
+
       }
 
       lbl_rec_executando.Text = "NÃO";
